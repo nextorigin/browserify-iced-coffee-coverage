@@ -71,6 +71,7 @@ module.exports = function(file, passedOptions) {
                 generatedFile: file,
                 inline: true,
                 bare: options.bare,
+                runtime: options.runtime,
                 literate: isLiterate(file)
             });
             transformed = compiled.js;
