@@ -1,8 +1,8 @@
 'use strict';
 var path = require('path');
 var through = require('through');
-var coffee = require('coffee-script');
-var coffeeCoverage = require('coffee-coverage');
+var coffee = require('iced-coffee-script');
+var coffeeCoverage = require('iced-coffee-coverage');
 var minimatch = require('minimatch');
 var assign = require('object-assign');
 
@@ -21,18 +21,18 @@ var defaultIgnore = [
  */
 
 function isCoffee (file) {
-    return /\.((lit)?coffee|coffee\.md)$/.test(file);
+    return /\.((lit)?coffee|coffee\.md|(lit)?iced|iced\.md)$/.test(file);
 }
 
 function isLiterate (file) {
-    return /\.(litcoffee|coffee\.md)$/.test(file);
+    return /\.(litcoffee|coffee\.md|liticed|iced\.md)$/.test(file);
 }
 
 /**
  * Transform coffee source into javascript with either JScoverage or Istanbul style instrumentation
  *
  * `options` {Object} - all options that can be passed to this
- * [function](https://github.com/benbria/coffee-coverage/blob/v0.5.4/src/coffeeCoverage.coffee#L270) plus these:
+ * [function](https://github.com/nextorigin/iced-coffee-coverage/blob/v0.5.4/src/coffeeCoverage.coffee#L270) plus these:
  *
  * `options.ignore` {Array} - file patterns to not instrument
  * `options.noInit` {Boolean} - default to `false`. Use this if you do not want the initialization (which adds the file
@@ -58,10 +58,10 @@ module.exports = function(file, passedOptions) {
 
     /**
      * If in the list of ignored paths, don't instrument, just coffeeify. We do this here instead of in
-     * coffee-coverage, as coffee-coverage works on the file system. Since we are getting piped the files,
-     * we bypass coffee-coverage's filesystem code.
+     * iced-coffee-coverage, as iced-coffee-coverage works on the file system. Since we are getting piped the files,
+     * we bypass iced-coffee-coverage's filesystem code.
      *
-     * else instrument and coffeeify (which is done by coffee-coverage)
+     * else instrument and coffeeify (which is done by iced-coffee-coverage)
      */
      function end() {
         var transformed;
