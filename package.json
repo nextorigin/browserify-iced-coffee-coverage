@@ -29,6 +29,7 @@
   "devDependencies": {
     "browserify": "^10.0.0",
     "chai": "^2.3.0",
+    "coveralls": "^2.11.12",
     "istanbul": "^0.3.13",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
@@ -39,6 +40,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "coverage-report": "istanbul cover _mocha mocha-test/**/*Test.js",
     "build-test": "mkdir -p build-test && ./node_modules/.bin/browserify -t [ ./index.js --instrumentor=istanbul ] karma-test/index.js -o ./build-test/bundle.js",
     "test-i": "./node_modules/.bin/mocha mocha-test/**/*Test.js",
     "test-k": "npm run build-test && ./node_modules/karma/bin/karma start --single-run && ./node_modules/.bin/mocha karma-test/verify.js && rm -rf coverage",
