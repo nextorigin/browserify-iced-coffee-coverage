@@ -1,7 +1,7 @@
 {
-  "name": "browserify-coffee-coverage",
+  "name": "browserify-iced-coffee-coverage",
   "version": "1.1.1",
-  "description": "Browserify transform to instrument coffee src files with JSCoverage or Istanbul instrumentation",
+  "description": "Browserify transform to instrument iced src files with JSCoverage or Istanbul instrumentation",
   "keywords": [
     "istanbul",
     "jscoverage",
@@ -12,11 +12,12 @@
   "author": "Benbria (http://www.benbria.com/)",
   "license": "MIT",
   "contributors": [
-    "Calvin Wiebe (https://github.com/calvinwiebe)"
+    "Calvin Wiebe (https://github.com/calvinwiebe)",
+    "Charles Phillips (https://github.com/doublerebel)"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/benbria/browserify-coffee-coverage.git"
+    "url": "https://github.com/nextorigin/browserify-iced-coffee-coverage.git"
   },
   "dependencies": {
     "iced-coffee-coverage": "^1.0.3",
