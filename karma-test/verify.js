@@ -15,6 +15,6 @@ describe('Verify coverage of karma-coverage', function() {
 
     it('should have the right coverage counts', function() {
         var counts = coverageLine.match(/\d+/g);
-        expect(counts).to.eql(['50', '25', '100', '50']);
+        expect(counts).to.eql(['50', '25', '100', '50', '4', '5', '7']);
     });
 });
