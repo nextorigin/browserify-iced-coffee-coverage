@@ -10,7 +10,8 @@ describe('Verify coverage of karma-coverage', function() {
         .filter(function(line) {
             return line.match(/foo.coffee/);
         })[0]
-        .replace(/\[\d+/g, '');
+        .replace(//g, '')
+        .replace(/\[\d+;?[01]?m/g, '');
 
     it('should have the right coverage counts', function() {
         var counts = coverageLine.match(/\d+/g);
